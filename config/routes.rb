@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
-  get 'about' => "blog/pages#about", as: :about
-  get 'contact' => "blog/pages#contact", as: :contact
 
   root to: "blog/posts#index"
 
-  scope module: 'blog' do
+  namespace :author do
     resources :posts
+  end
+
+  scope module: 'blog' do
+    get 'about' => "pages#about", as: :about
+    get 'contact' => "pages#contact", as: :contact
+    get 'posts' => 'posts#index', as: :posts
+    get 'posts/:id' => 'posts#show', as: :post
+
   end
 
 
