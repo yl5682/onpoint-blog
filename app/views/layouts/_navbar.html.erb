@@ -15,9 +15,19 @@
       <li class="nav-item <%= yield(:contact_active) %>">
         <%= link_to 'Contact', contact_path, class: "nav-link #{yield(:contact_active)}" %>
       </li>
+
+      <% if author_signed_in? %>
       <li class="nav-item <%= yield(:author_active) %>">
         <%= link_to 'My Posts', authors_posts_path, class: "nav-link #{yield(:author_active)}" %>
       </li>
+      <li class="nav-item">
+        <%= link_to 'Logout', destroy_author_session_path, method: :delete, class: "nav-link" %>
+      </li>
+      <% else %>
+      <li class="nav-item">
+        <%= link_to 'Sign in', new_author_session_path, class: "nav-link" %>
+      </li>
+      <% end %>
     </ul>
 
   </div>
