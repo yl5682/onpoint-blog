@@ -2,6 +2,8 @@ class Post < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  belongs_to :author
+
   # sort by descending order by the id
   scope :most_recent, -> { order(id: :desc)}
 

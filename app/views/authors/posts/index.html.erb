@@ -3,7 +3,7 @@
 
 
 <div class="row">
-    <%= link_to "New Post", new_author_post_path, class: "btn btn-lg btn-primary"%>
+    <%= link_to "New Post", new_authors_post_path, class: "btn btn-lg btn-primary"%>
   <br>
   <br>
   <table class="table table-striped">
@@ -38,7 +38,7 @@
         <td><%= post.description %></td>
         <td><%= post.slug %></td>
         <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_author_post_path(post) %></td>
+        <td><%= link_to 'Edit', edit_authors_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -47,4 +47,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_author_post_path %>
+<%= link_to 'New Post', new_authors_post_path %>
