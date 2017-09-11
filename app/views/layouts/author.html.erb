@@ -9,7 +9,15 @@
   </head>
 
   <body>
+
+
     <%= render 'layouts/navbar' %>
+
+    <div class='notification'>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+    
     <div class="container <%= controller_name %> <%= action_name %>">
       <%= yield %>
     </div>
