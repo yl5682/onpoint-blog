@@ -13,6 +13,17 @@
 
  */
 
+ table.index-table {
+   th:last-child, td:last-child {
+     text-align: right;
+   }
+
+   td {
+     vertical-align: middle;
+   }
+ }
+
+
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 @import "colors";
@@ -22,3 +33,23 @@
 *= require_tree .
 *= require_self
 */
+
+
+
+
+
+
+.title-flexbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  .flex-child-left {
+
+  }
+
+  .flex-child-right {
+    float: right;
+    margin-left: auto;
+  }
+}
