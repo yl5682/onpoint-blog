@@ -12,34 +12,37 @@
   <% end %>
 
 
+
 <div class="row">
-  <div class="col-md-3">
-    <div class="field">
+  <div class="col-md-12">
+    <div class="field form-group">
       <%= form.label :title %>
-      <%= form.text_field :title, id: :post_title %>
+      <%= form.text_field :title, id: :post_title, :class => "form-control" %>
     </div>
 
-    <div class="field">
+    <div class="field form-group">
       <%= form.label :banner_image_url %>
-      <%= form.text_field :banner_image_url %>
+      <%= form.text_field :banner_image_url, :class => "form-control" %>
     </div>
 
-    <div class="field">
+    <div class="field form-group">
       <%= form.label :description %>
-      <%= form.text_area :description, id: :post_description %>
+      <%= form.text_area :description, id: :post_description, :class => "form-control" %>
     </div>
+
+    <div class="field form-group">
+      <%= form.label :body %>
+      <%= form.text_area :body, id: :post_body, :class => "tinymce form-control", :rows => 5 %>
+    </div>
+
   </div>
 
-  <div class="col-md-9">
-    <div class="field">
-      <%= form.label :body %>
-      <%= form.text_area :body, id: :post_body, :class => "tinymce", :rows => 5 %>
-    </div>
-  </div>
+
 
 </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Save Post", :class => "btn btn-success" %>
+    <%= link_to 'Discard and Return', authors_posts_path, :class => "btn btn-warning" %>
   </div>
 
   <%= tinymce %>
