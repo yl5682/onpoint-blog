@@ -64,3 +64,7 @@ gem "devise"
 gem 'tinymce-rails'
 
 gem "annotate"
+
+gem 'will_paginate', '~> 3.1.6'
+
+gem 'bootstrap-will_paginate'
